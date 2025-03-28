@@ -5,7 +5,7 @@ import numpy as np
 from preprocessing import Process as pre
 import streamlit as st
 
-ruta = "F:\Proyecto_Obesidad\modelo_keras.pkl"
+ruta = "modelo_keras.pkl"
 model=joblib.load(ruta)
 
 
