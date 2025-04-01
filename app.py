@@ -5,7 +5,7 @@ import numpy as np
 from preprocessing import Process as pre
 import streamlit as st
 
-ruta = "modelo_keras.pkl"
+ruta = "modelo_keras2.pkl"
 model=joblib.load(ruta)
 
 
@@ -41,7 +41,6 @@ def main():
         if altura > 0:
             imc = peso / (altura ** 2)
         #Recoger datos
-        # Muestra los datos en formato JSON
         datos = {
             "Age": edad,
             "Height": round(altura, 2),
@@ -57,7 +56,7 @@ def main():
             "IMC": round(imc, 2)
             } 
         # Convertir el diccionario a un DataFrame de pandas
-        df = pd.DataFrame([datos])  
+        df = pd.DataFrame([datos])
         #Preprocesamiento
         df = pre.preprocess(df)
         # Llamar al modelo y obtener la respuesta
