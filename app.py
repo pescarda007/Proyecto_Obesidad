@@ -5,7 +5,7 @@ import numpy as np
 from preprocessing import Process as pre
 import streamlit as st
 
-ruta = "modelo_keras2.pkl"
+ruta = "modelo_keras.pkl"
 model=joblib.load(ruta)
 
 
@@ -64,6 +64,8 @@ def main():
         resultado = pre.postptocess(predict)
         # Mostrar la predicción en la app
         st.success(resultado)
+        
+        st.write(datos)
 
 if __name__ == "__main__":
     main()
