@@ -10,8 +10,8 @@ model=joblib.load(ruta)
 
 
 def main():
-    st.title("Comprueba tu estado corporal")
-    
+    st.title("Test de obesidad")
+    st.text("Este test es interactivo, no es necesario recargar para obtener otros datos")
     # Entrada de datos numéricos
     edad = st.number_input("Edad", min_value=1, max_value=120, step=1)
     altura = st.number_input("Altura (m)", value=0.0, step=0.1, format="%.2f")
@@ -22,12 +22,13 @@ def main():
     mtrans = st.selectbox("Medio de transporte que más uses", ["Automóvil", "Bicicleta", "Motocicleta", "Transporte público", "A pie"])
     
     # Otros valores numéricos
-    favc = st.slider("Consumo de comida hipercalórica (1-5)", 1, 5, 3)
-    fcvc = st.slider("Consumo de vegetales (1-5)", 1, 5, 3)
+   
+    fcvc = st.slider("Consumo de vegetales (1-3)", 1, 3, 2)
     ncp = st.slider("Número de comidas al día", 1, 6, 3)
-    faf = st.slider("Actividad física por semana (0-3)", 0, 3, 3)
+    faf = st.slider("Actividad física por semana (1-3)", 1, 3, 1)
     
     # Checkbox
+    favc = st.checkbox("¿Consumo de comida hipercalórica?")
     smoke = st.checkbox("¿Fumas?")
     historial_familiar = st.checkbox("Historial Familiar de obesidad")
     
@@ -36,7 +37,7 @@ def main():
     
     # Botón de envío
     if st.button("Enviar"):
-        st.success("Datos enviados correctamente")
+        #st.success("Datos enviados correctamente")
         # Cálculo de IMC
         if altura > 0:
             imc = peso / (altura ** 2)
@@ -57,15 +58,16 @@ def main():
             } 
         # Convertir el diccionario a un DataFrame de pandas
         df = pd.DataFrame([datos])
+        
         #Preprocesamiento
         df = pre.preprocess(df)
+
         # Llamar al modelo y obtener la respuesta
         predict = model(df)
         resultado = pre.postptocess(predict)
         # Mostrar la predicción en la app
         st.success(resultado)
         
-        st.write(datos)
 
 if __name__ == "__main__":
     main()
