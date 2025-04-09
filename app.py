@@ -2,10 +2,10 @@ import joblib
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-from preprocessing import Process as pre
+from src.preprocessing import Process as pre
 import streamlit as st
 
-ruta = "modelo_keras.pkl"
+ruta = "models/modelo_keras2_0.pkl"
 model=joblib.load(ruta)
 
 
