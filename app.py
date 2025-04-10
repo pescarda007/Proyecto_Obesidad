@@ -5,7 +5,7 @@ import numpy as np
 from src.preprocessing import Process as pre
 import streamlit as st
 
-ruta = "models/modelo_keras2_0.pkl"
+ruta = "models/modelo_kerasV2low.pkl"
 model=joblib.load(ruta)
 
 
@@ -22,17 +22,14 @@ def main():
     mtrans = st.selectbox("Medio de transporte que más uses", ["Automóvil", "Bicicleta", "Motocicleta", "Transporte público", "A pie"])
     
     # Otros valores numéricos
-   
     fcvc = st.slider("Consumo de vegetales (1-3)", 1, 3, 2)
     ncp = st.slider("Número de comidas al día", 1, 6, 3)
-    faf = st.slider("Actividad física por semana (1-3)", 1, 3, 1)
+    faf = st.slider("Actividad física por semana (0-3)", 0, 3, 1)
     
     # Checkbox
     favc = st.checkbox("¿Consumo de comida hipercalórica?")
     smoke = st.checkbox("¿Fumas?")
     historial_familiar = st.checkbox("Historial Familiar de obesidad")
-    
-    # Diccionario con los datos
     
     
     # Botón de envío
