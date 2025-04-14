@@ -5,7 +5,7 @@ import numpy as np
 from src.preprocessing import Process as pre
 import streamlit as st
 
-ruta = "models/modelo_kerasV2low.pkl"
+ruta = "models/modelo_keras_definitivo.pkl"
 model=joblib.load(ruta)
 
 
