@@ -5,8 +5,8 @@ import joblib
 
 class Process:
     def preprocess(x):
-        ohe=joblib.load("one-hot_encoder.pkl")
-        scaler = joblib.load("minmaxscaler.pkl")
+        ohe=joblib.load("src/one-hot_encoder.pkl")
+        scaler = joblib.load("src/minmaxscaler.pkl")
 
         x[["Height","Weight","IMC"]] = scaler.fit_transform(x[['Height', 'Weight',"IMC"]])
         x[["Age"]] = scaler.fit_transform(x[["Age"]])
