@@ -5,7 +5,7 @@ import numpy as np
 from src.preprocessing import Process as pre
 import streamlit as st
 
-ruta = "models/modelo_keras_definitivo.pkl"
+ruta = "models/modelo_keras_pipe.pkl"
 model=joblib.load(ruta)
 
 
@@ -57,7 +57,26 @@ def main():
         df = pd.DataFrame([datos])
         
         #Preprocesamiento
-        df = pre.preprocess(df)
+        df = pre.preprocess_pipe(df)
+        data2 = {
+            'Age': 0.191489,
+            'Height': 0.226415,
+            'Weight': 0.298507,
+            'family_history_with_overweight': 1.0,
+            'FAVC': 1.0,
+            'FCVC': 0.5,
+            'NCP': 0.0,
+            'SMOKE': 0.0,
+            'FAF': 0.0,
+            'CALC': 0.0,
+            'IMC': 0.503764,
+            'MTRANS_Bike': 0.0,
+            'MTRANS_Motorbike': 0.0,
+            'MTRANS_Public_Transportation': 1.0,
+            'MTRANS_Walking': 0.0
+}
+
+        #df = pd.DataFrame([data2])
 
         # Llamar al modelo y obtener la respuesta
         predict = model(df)

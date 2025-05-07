@@ -1,7 +1,12 @@
 import pandas as pd
 import numpy as np
-from sklearn.preprocessing import MinMaxScaler,OneHotEncoder
 import joblib
+from src.preprocessing_utils import BMICalculator
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import MinMaxScaler, OneHotEncoder, FunctionTransformer
+from sklearn.impute import SimpleImputer
+
 
 class Process:
     def preprocess(x):
@@ -36,11 +41,18 @@ class Process:
             2 :'Estás un poco por encima del peso, pero es saludable',
             3 :'Estás por encima del peso y entrando en una zona peligrosa para la salud',
             4 :'Obesidad de tipo 1 a darle zapatilla, hay que bajar de peso',
-            5 :'Obesodad de tipo 2',
-            6 :'Obesidad de tipo 3'
+            5 :'Obesodad de tipo 2 zona amarilla hay que ponerse seri@ a bajar ese peso',
+            6 :'Obesidad de tipo 3 ZONA ROJA PELIGRO, hipertensión arterial, diabetes mellitus, cardiopatía coronaria, insuficiencia respiratoria y dislipidemia'
         }
         
         valores = prediccion.numpy()
         clase_idx = valores.argmax(axis=1)[0]
         
         return clases.get(clase_idx)
+    
+    
+
+    def preprocess_pipe(x):
+        pipeline = joblib.load("src/pipeline_completo.pkl")
+        x_pipe = pipeline.transform(x)
+        return x_pipe
