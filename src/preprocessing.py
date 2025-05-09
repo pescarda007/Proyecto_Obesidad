@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import joblib
-from src.preprocessing_utils import BMICalculator
+from src.preprocessing_utils import BMICalculator, CustomReplacer
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import MinMaxScaler, OneHotEncoder, FunctionTransformer
@@ -54,5 +54,8 @@ class Process:
 
     def preprocess_pipe(x):
         pipeline = joblib.load("src/pipeline_completo.pkl")
+        x[['family_history_with_overweight', 'FAVC','SMOKE']] = x[['family_history_with_overweight', 'FAVC','SMOKE']].replace({True: 'yes', False:'no' })
+        x['CALC'] = x['CALC'].replace({'Nunca': 'no', 'A veces': 'Sometimes', 'Frecuentemente': 'Frequently', 'A diario': 'Always'})
+        x['MTRANS'] = x['MTRANS'].replace({'Automóvil': 'Automobile', 'Bicicleta': 'Bike', 'Motocicleta': 'Motobike', 'Transporte público': 'Public_Transportation', 'A pie':'Walking'})
         x_pipe = pipeline.transform(x)
         return x_pipe

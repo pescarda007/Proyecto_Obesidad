@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from src.preprocessing import Process as pre
 import streamlit as st
+from src.preprocessing_utils import BMICalculator, CustomReplacer
 
 ruta = "models/modelo_keras_pipe.pkl"
 model=joblib.load(ruta)
