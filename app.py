@@ -59,6 +59,7 @@ def main():
         
         #Preprocesamiento
         df = pre.preprocess_pipe(df)
+        #Testing
         data2 = {
             'Age': 0.191489,
             'Height': 0.226415,
@@ -81,7 +82,7 @@ def main():
 
         # Llamar al modelo y obtener la respuesta
         predict = model(df)
-        resultado = pre.postptocess(predict)
+        resultado = pre.postprocess(predict)
         # Mostrar la predicción en la app
         st.success(resultado)
         

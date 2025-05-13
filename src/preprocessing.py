@@ -34,14 +34,14 @@ class Process:
         return df
     
     
-    def postptocess(prediccion):
+    def postprocess(prediccion):
         clases = {
             0 :'Peso insuficiente, estás por debajo de la media',
             1 :'Peso normal sigue así',
             2 :'Estás un poco por encima del peso, pero es saludable',
             3 :'Estás por encima del peso y entrando en una zona peligrosa para la salud',
             4 :'Obesidad de tipo 1 a darle zapatilla, hay que bajar de peso',
-            5 :'Obesodad de tipo 2 zona amarilla hay que ponerse seri@ a bajar ese peso',
+            5 :'Obesidad de tipo 2 zona amarilla hay que ponerse seri@ a bajar ese peso o le das zapatilla o te van a dar con la zapatilla',
             6 :'Obesidad de tipo 3 ZONA ROJA PELIGRO, hipertensión arterial, diabetes mellitus, cardiopatía coronaria, insuficiencia respiratoria y dislipidemia'
         }
         
