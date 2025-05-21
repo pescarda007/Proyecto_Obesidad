@@ -23,12 +23,13 @@ Enlace al test https://proyectoobesidad-nodd3r-pabloescarda.streamlit.app
 
 
 INSTRUCCIONES App version desarollador
-    En la carpeta 'data' se recogen los datos usados para entrenar esta IA
+    En la carpeta 'data' se recogen los datos usados para entrenar y testear esta IA
     En la carpeta 'models' están todos los modelos de testeo
-    En la carpeta 'notebooks' están todas las pruebas realizadas para este proyecto
+    En la carpeta 'notebooks' están todas las pruebas realizadas para este proyecto en Colab de Google
     En la carpeta 'src' están los encodes y el preprocesamiento necesarios para el proyecto, además de un entrenamiento del modelo original
     El archivo app.py es el centro del proyecto recoge toda la funcionalidad y el front de la app
     En el archivo requirements.txt están especificadas todas las librerias usadas para este proyecto
 
 
 Este proyecto es de fines académicos se esperan errores
+En algunos navegadores Streamlit no funciona correctamente, recomiendo usar Opera, Opera GX o Google Chrome.
