@@ -1,35 +1,72 @@
-# Proyecto_Obesidad
-Proyecto sobre IA con fines académicos.
-Este proyecto es exclusivamente una prueba y primer contacto con IA a partir de tensores y su lanzamiento en streamlit.
+# 🧠 Proyecto: Clasificación de Obesidad con IA
+Este proyecto tiene fines académicos y constituye una primera aproximación al uso de Inteligencia Artificial para clasificar el **índice de obesidad** de una persona, utilizando datos personales, hábitos y estilo de vida.  
+Se ha desarrollado una aplicación web interactiva usando **Streamlit** que permite al usuario introducir sus datos y obtener una predicción automática del nivel de obesidad.
 
-INSTRUCCIONES App version usuario
-Formulario simple para obtener unos datos para clasificar el índice de obesidad:
+---
 
-    Entrada 1: Tipo numeral, recoge la edad del usuario
-    Entrada 2: Tipo numeral hasta 2 decimales, recoge la altura del usuario
-    Entrada 3: Tipo numeral hasta 2 decimales, recoge el peso del usuario
-    Entrada 4: Tipo desplegable, recoge la frecuencia de cnsumo de alcohol
-    Entrada 5: Tipo desplegable, recoge el medio de transporte más usado por el usuario
-    Entrada 6: Tipo numeral recogido por un slider(1-3), recoge la frecuencia de consumo de vegetales(fruta y verdura) semanal del usuario
-    Entrada 7: Tipo numeral recogido por un slider(1-6), recoge el número de comidas fuertes al día(desayuno, almuerzos, comida, cena)
-    Entrada 8: Tipo numeral recogido por un slider(0-3), recoge la actividad física semanal que hace el usuario(gimnasio,senderismo,actividades deportivas...)
-    Entrada 9: Tipo checkbox, recoge si en usuario consume comidas hipercalóricas(son alimentos que se suelen utilizar para aumentar el peso del usuario)
-    Entrada 10: Tipo ceckbox, recoge si el usuario es fumador
-    Entrada 11: Tipo ceckbox, recoge si el usuario tiene antecedente de obesidad en su familia
+## 🚀 Demo del Proyecto
+🔗 Accede a la demo:  
+"https://proyectoobesidad-nodd3r-pabloescarda.streamlit.app"
 
+> ⚠️ Recomendamos utilizar navegadores como **Opera**, **Opera GX** o **Google Chrome** para evitar posibles errores de compatibilidad con Streamlit.
+
+---
+
+La app permite al usuario introducir los siguientes datos para obtener una predicción:
+
+    | Entrada | Tipo | Descripción |
+    |--------|------|-------------|
+    | Edad | Numérico | Edad del usuario |
+    | Altura | Numérico (2 decimales) | Altura en metros |
+    | Peso | Numérico (2 decimales) | Peso en kilogramos |
+    | Frecuencia de consumo de alcohol | Desplegable | Opciones predefinidas |
+    | Medio de transporte habitual | Desplegable | Opciones predefinidas |
+    | Frecuencia de consumo de vegetales | Slider (1 a 3) | De baja a alta |
+    | Número de comidas fuertes al día | Slider (1 a 6) | Número aproximado |
+    | Actividad física semanal | Slider (0 a 3) | Nivel de actividad física |
+    | ¿Consume alimentos hipercalóricos? | Checkbox | Sí/No |
+    | ¿Es fumador? | Checkbox | Sí/No |
+    | ¿Tiene antecedentes familiares de obesidad? | Checkbox | Sí/No |
+    
     Por último hay un botón que al pulsar te da el resultado del test
+    
+---
+    
+## ⚙️ Instalación y Ejecución Local
 
-Enlace al test https://proyectoobesidad-nodd3r-pabloescarda.streamlit.app
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/usuario/proyecto_obesidad.git
+   cd proyecto_obesidad
+   ```
 
+2. Instala las dependencias:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-INSTRUCCIONES App version desarollador
-    En la carpeta 'data' se recogen los datos usados para entrenar y testear esta IA
-    En la carpeta 'models' están todos los modelos de testeo
-    En la carpeta 'notebooks' están todas las pruebas realizadas para este proyecto en Colab de Google
-    En la carpeta 'src' están los encodes y el preprocesamiento necesarios para el proyecto, además de un entrenamiento del modelo original
-    El archivo app.py es el centro del proyecto recoge toda la funcionalidad y el front de la app
-    En el archivo requirements.txt están especificadas todas las librerias usadas para este proyecto
+3. Ejecuta la app:
+   ```bash
+   streamlit run app.py
+   ```
+   
+---
 
+## 📌 Notas
 
-Este proyecto es de fines académicos se esperan errores
-En algunos navegadores Streamlit no funciona correctamente, recomiendo usar Opera, Opera GX o Google Chrome.
+- Este proyecto es únicamente para **fines educativos**.
+- Se han usado herramientas como Google Colab para el entrenamiento y evaluación de los modelos.
+- Si deseas replicar el entrenamiento, puedes revisar los notebooks en la carpeta correspondiente.
+
+---
+
+## 🙌 Autor
+- Pablo Escarda
+
+---
+
+## ✅ Mejoras posibles
+- Añadir validación cruzada y tuning de hiperparámetros.
+- Añadir gráficos explicativos en la app (por ejemplo, `SHAP` o `Feature Importance`).
+- Guardar logs del modelo y métricas.
+- Añadir sección de interpretación del resultado para el usuario.
