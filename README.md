@@ -12,7 +12,7 @@ Se ha desarrollado una aplicación web interactiva usando **Streamlit** que perm
 
 ---
 
-La app permite al usuario introducir los siguientes datos para obtener una predicción:
+La app 🖥️ permite al usuario introducir los siguientes datos para obtener una predicción:
 
     | Entrada | Tipo | Descripción |
     |--------|------|-------------|
@@ -29,7 +29,9 @@ La app permite al usuario introducir los siguientes datos para obtener una predi
     | ¿Tiene antecedentes familiares de obesidad? | Checkbox | Sí/No |
     
     Por último hay un botón que al pulsar te da el resultado del test
-    
+
+    ![image](https://github.com/user-attachments/assets/0fbe7133-58a8-41c9-8928-7ae0149850ee)
+
 ---
     
 ## ⚙️ Instalación y Ejecución Local
