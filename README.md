@@ -30,7 +30,7 @@ La app 🖥️ permite al usuario introducir los siguientes datos para obtener u
     
     Por último hay un botón que al pulsar te da el resultado del test
 
-    ![image](https://github.com/user-attachments/assets/0fbe7133-58a8-41c9-8928-7ae0149850ee)
+![ImagenPagina](https://github.com/pescarda007/Proyecto_Obesidad/blob/main/images/Capturapagina.PNG)
 
 ---
     
